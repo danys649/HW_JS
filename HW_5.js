@@ -1,55 +1,48 @@
 //задание 1
-while (true) 
-{
+let number;
+do {
     let userInput = prompt("Введіть будь-яке число");
-    let number = Number(userInput);
+    number = Number(userInput);
     if (isNaN(number)) 
     {
         alert("Only numbers, please");
     } 
-    else if (number >= 123)
-    {
-        alert("Wow, you've ended this endless cycle!");
-        break;
-    } 
-    else 
+    else if (number <= 123)
     {
         alert("Продовжуйте");
     }
-}
 
-while(true)
-{
-    let userInput = prompt("Введіть перше число");
-    let numberOne = Number(userInput);
-    userInput = prompt("Введіть друге число");
-    let numberTwo = Number(userInput);
-    if (isNaN(numberOne) && isNaN(numberOne)) 
-    {
-        alert("Only numbers, please");
-    } 
-    if(numberOne !== numberTwo)
-    {
-        break;
-    }
-}
+} while (isNaN(number) || number <= 123)
+alert("Wow, you've ended this endless cycle!");
 
 //задание 2
-let firstNumber = prompt("Введіть перше число");
-firstNumber = Number(firstNumber);
-let secondNumber = prompt("Введіть друге число");
-secondNumber = Number(secondNumber);
-
-while (isNaN(firstNumber) || isNaN(secondNumber)) 
-{
-    alert("Тільки числа, будь ласка");
+let alertRun = true;//что бы уведомление не появлялось при первом запуске
+do {
+    if (!alertRun) 
+    {
+        alert("Тільки числа, будь ласка");
+    }
     firstNumber = prompt("Введіть перше число");
     firstNumber = Number(firstNumber);
     secondNumber = prompt("Введіть друге число");
     secondNumber = Number(secondNumber);
+    firstRun = false;
+} while (isNaN(firstNumber) || isNaN(secondNumber))
+
+let start;//меньшее
+let end;//большее
+if(firstNumber > secondNumber)
+{
+    start = secondNumber;
+    end = firstNumber;
 }
-let start = Math.min(firstNumber, secondNumber);
-let end = Math.max(firstNumber, secondNumber);
+else
+{
+    end = secondNumber;
+    start = firstNumber;
+}
+//let start = Math.min(firstNumber, secondNumber);
+//let end = Math.max(firstNumber, secondNumber);
 let sum = 0;
 let product = 1;//если будет 0, то будет умножаться на этот 0 и будет добуток всегда 0
 for (let i = start; i <= end; i++) 
