@@ -3,6 +3,11 @@ let number;
 do {
     let userInput = prompt("Введіть будь-яке число");
     number = Number(userInput);
+    if (number >= 123) {
+        alert("Wow, you've ended this endless cycle!");
+        break;
+    }
+    alert('Should continue');
     if (isNaN(number)) 
     {
         alert("Only numbers, please");
@@ -12,21 +17,19 @@ do {
         alert("Продовжуйте");
     }
 
-} while (isNaN(number) || number <= 123)
-alert("Wow, you've ended this endless cycle!");
+} while (isNaN(number))
+
 
 //задание 2
-let alertRun = true;//что бы уведомление не появлялось при первом запуске
 do {
-    if (!alertRun) 
-    {
-        alert("Тільки числа, будь ласка");
-    }
     firstNumber = prompt("Введіть перше число");
     firstNumber = Number(firstNumber);
     secondNumber = prompt("Введіть друге число");
     secondNumber = Number(secondNumber);
-    firstRun = false;
+    if (isNaN(firstNumber) || isNaN(secondNumber))
+     {
+        alert('Only numbers, please');
+    }
 } while (isNaN(firstNumber) || isNaN(secondNumber))
 
 let start;//меньшее
