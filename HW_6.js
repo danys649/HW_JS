@@ -3,7 +3,7 @@ function searchMinValue(data)
     let minValue = data[0];
     if(data.length === 0) 
     {
-       minValue = null;
+       return null;
     }
     for(let i = 0; i < data.length; i ++) 
     {
@@ -15,6 +15,7 @@ function searchMinValue(data)
     return minValue;
 }
 console.log(`Минимальное: ${searchMinValue([5, 5, 6, 7, -5, -12, 45])}`);
+console.log(`Минимальное: ${searchMinValue([])}`);
 
 //Задание 2
 function palindromString(strPal)
@@ -25,8 +26,7 @@ function palindromString(strPal)
         check = true;
         if(strPal[start] !== strPal[end])
         {
-            check = false;
-            break;
+           return false;
         }
     }
     return check;
@@ -40,8 +40,8 @@ function stringToNumber(str, num) //num для доп вопроса
     let result = 0;
     for(let i = 0; i < str.length; i++) 
     {
-        let digit = str[i] | 0;
-        //let digit = str[i] %  10; //Или
+       // let digit = str[i] | 0;
+        let digit = str[i] %  10; //Или
         result = result * 10 + digit;
         //result = result * num + digit; //Дополнительный вопрос
     }
@@ -49,5 +49,5 @@ function stringToNumber(str, num) //num для доп вопроса
 }
 
 console.log(`Число: ${stringToNumber('101', 2)}`); 
-console.log(`Число: ${stringToNumber('5', 6)}`);  
+console.log(`Число: ${stringToNumber('52', 6)}`);  
 console.log(`Число: ${stringToNumber('101', 8)}`);  
