@@ -3,11 +3,11 @@ function searchMinValue(data)
     let minValue = data[0];
     if(data.length === 0) 
     {
-       minValue= null;
+       minValue = null;
     }
     for(let i = 0; i < data.length; i ++) 
     {
-        if(minValue > data[i])//если найти большее поменять знак на <
+        if(minValue > data[i])//если нужно найти большее число поменять знак на <
         {
             minValue = data[i];
         }
@@ -35,7 +35,7 @@ console.log(`Check: ${palindromString('')}`);
 console.log(`Check: ${palindromString('asdfdsa')}`);
 
 //Задание 3
-function stringToNumber(str, num) //num для доп задания
+function stringToNumber(str, num) //num для доп вопроса
 {
     let result = 0;
     for(let i = 0; i < str.length; i++) 
@@ -43,7 +43,7 @@ function stringToNumber(str, num) //num для доп задания
         let digit = str[i] | 0;
         //let digit = str[i] %  10; //Или
         result = result * 10 + digit;
-        //result = result * num + digit; //Дополнительное задание
+        //result = result * num + digit; //Дополнительный вопрос
     }
     return result;
 }
