@@ -43,11 +43,11 @@ function stringToNumber(str, num) //num для доп вопроса
        // let digit = str[i] | 0;
         let digit = str[i] %  10; //Или
         result = result * 10 + digit;
-        //result = result * num + digit; //Дополнительный вопрос
+        result = result * num + digit; //Дополнительный вопрос
     }
     return result;
 }
 
 console.log(`Число: ${stringToNumber('101', 2)}`); 
-console.log(`Число: ${stringToNumber('52', 6)}`);  
+console.log(`Число: ${stringToNumber('525', 6)}`);  
 console.log(`Число: ${stringToNumber('101', 8)}`);  
