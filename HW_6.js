@@ -35,19 +35,24 @@ console.log(`Check: ${palindromString('')}`);
 console.log(`Check: ${palindromString('asdfdsa')}`);
 
 //Задание 3
-function stringToNumber(str, num) //num для доп вопроса
+function stringToNumber(str, num = 10) //num для доп вопроса
 {
     let result = 0;
     for(let i = 0; i < str.length; i++) 
     {
-       // let digit = str[i] | 0;
-        let digit = str[i] %  10; //Или
+        // 1 метод
+        let digit = str[i] | 0;
+        result += digit * 10 ** (str.length - i - 1);
+        // 2  метод
+        digit = str[i] | 0;
+        result = result * num + digit; // для свободной системы счисления будет нужен num
+        // 3 метод
+        digit = str[i] %  10; 
         result = result * 10 + digit;
-        result = result * num + digit; //Дополнительный вопрос
     }
     return result;
 }
 
-console.log(`Число: ${stringToNumber('101', 2)}`); 
+console.log(`Число: ${stringToNumber('25', 2)}`); 
 console.log(`Число: ${stringToNumber('525', 6)}`);  
 console.log(`Число: ${stringToNumber('101', 8)}`);  
