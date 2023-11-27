@@ -20,16 +20,21 @@ console.log(`Минимальное: ${searchMinValue([])}`);
 //Задание 2
 function palindromString(strPal)
 {
-    let check = false;
-    for(let start = 0, end = strPal.length - 1; start < end; start++, end--)
+    if(strPal.length > 0)
     {
-        check = true;
-        if(strPal[start] !== strPal[end])
+        for(let start = 0, end = strPal.length - 1; start < end; start++, end--)
         {
-           return false;
-        }
+            if(strPal[start] !== strPal[end])
+            {
+                 return false;
+            }
+        }      
+        return true;
     }
-    return check;
+    else
+    {
+        return false;
+    }
 }
 console.log(`Check: ${palindromString('')}`);
 console.log(`Check: ${palindromString('asdfdsa')}`);
