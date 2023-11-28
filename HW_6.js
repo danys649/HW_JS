@@ -46,15 +46,15 @@ function stringToNumber(str, num = 10) //num для доп вопроса
     for(let i = 0; i < str.length; i++) 
     {
         // 1 метод
-        let digit = str[i] | 0;
-        result += digit * 10 ** (str.length - i - 1);
+        //let digit = str[i] | 0;
+        //result += digit * 10 ** (str.length - i - 1);
         // 2 метод
-        digit = str[i] %  10; 
+        let digit = str[i] - '0';
         result = result * num + digit; // для свободной системы счисления будет нужен num
     }
     return result;
 }
 console.log(`Число: ${stringToNumber('58')}`);  
-console.log(`Число: ${stringToNumber('25', 2)}`); 
-console.log(`Число: ${stringToNumber('525', 6)}`);  
+console.log(`Число: ${stringToNumber('25', 3)}`); 
+console.log(`Число: ${stringToNumber('525', 10)}`);  
 console.log(`Число: ${stringToNumber('101', 8)}`);  
