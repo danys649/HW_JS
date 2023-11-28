@@ -55,6 +55,6 @@ function stringToNumber(str, num = 10) //num для доп вопроса
     return result;
 }
 console.log(`Число: ${stringToNumber('58')}`);  
-console.log(`Число: ${stringToNumber('25', 3)}`); 
+console.log(`Число: ${stringToNumber('101', 2)}`); 
 console.log(`Число: ${stringToNumber('525', 10)}`);  
 console.log(`Число: ${stringToNumber('101', 8)}`);  
